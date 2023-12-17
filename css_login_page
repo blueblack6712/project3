@@ -1,0 +1,116 @@
+//css for integration login page
+<!DOCTYPE html> 
+<html>
+<head>
+    <title>Project_3</title>
+    <style type="text/css">
+
+        form {
+            display: inline-block;
+            text-align: left;
+            border: 1px solid black;
+            background-color: #FFFFFF;
+
+            padding: 50px;
+        }
+        label, input {
+            display: block;
+            margin: 5px 0;
+        }
+        input[type="submit"] {
+            background-color: #FFFFFF;
+            margin: 10px 0 0 0;
+            padding: 5px 10px;
+            color: black;
+            border: 10 px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+html {
+  --s: 100px; /* control the size */
+  --c1: #C3CCAF;
+  --c2: #67434F;
+  
+  --_s: calc(2*var(--s)) calc(2*var(--s));
+  --_g: var(--_s) conic-gradient(at 40% 40%,#0000 75%,var(--c1) 0);
+  --_p: var(--_s) conic-gradient(at 20% 20%,#0000 75%,var(--c2) 0);
+  background:
+    calc( .9*var(--s)) calc( .9*var(--s))/var(--_p),
+    calc(-.1*var(--s)) calc(-.1*var(--s))/var(--_p),
+    calc( .7*var(--s)) calc( .7*var(--s))/var(--_g),
+    calc(-.3*var(--s)) calc(-.3*var(--s))/var(--_g),
+    conic-gradient(from 90deg at 20% 20%,var(--c2) 25%,var(--c1) 0) 
+     0 0/var(--s) var(--s);
+  animation: m 3s infinite;
+}
+@keyframes m {
+  0% {
+   background-position: 
+    calc( .9*var(--s)) calc( .9*var(--s)),
+    calc(-.1*var(--s)) calc(-.1*var(--s)),
+    calc( .7*var(--s)) calc( .7*var(--s)),
+    calc(-.3*var(--s)) calc(-.3*var(--s)),0 0
+  }
+  25% {
+   background-position: 
+    calc(1.9*var(--s)) calc( .9*var(--s)),
+    calc(-1.1*var(--s)) calc(-.1*var(--s)),
+    calc(1.7*var(--s)) calc( .7*var(--s)),
+    calc(-1.3*var(--s)) calc(-.3*var(--s)),0 0
+  }
+  50% {
+   background-position: 
+    calc(1.9*var(--s)) calc(-.1*var(--s)),
+    calc(-1.1*var(--s)) calc( .9*var(--s)),
+    calc(1.7*var(--s)) calc(-.3*var(--s)),
+    calc(-1.3*var(--s)) calc( .7*var(--s)),0 0
+  }
+  75% {
+   background-position: 
+    calc(2.9*var(--s)) calc(-.1*var(--s)),
+    calc(-2.1*var(--s)) calc( .9*var(--s)),
+    calc(2.7*var(--s)) calc(-.3*var(--s)),
+    calc(-2.3*var(--s)) calc( .7*var(--s)),0 0
+  }
+  100% {
+   background-position: 
+    calc(2.9*var(--s)) calc(-1.1*var(--s)),
+    calc(-2.1*var(--s)) calc(1.9*var(--s)),
+    calc(2.7*var(--s)) calc(-1.3*var(--s)),
+    calc(-2.3*var(--s)) calc(1.7*var(--s)),0 0
+  }
+}
+    </style>
+
+</head>
+<body>
+    <h1>Welcome</h1>
+
+    <form>
+        <label for="username">User Id:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <input type="submit" value="Login">
+    </form>
+
+    <script type="text/javascript">
+        const form = document.querySelector('form');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // prevent default form submission behavior
+
+            // validate username and password
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            if (username === 'bit' && password === 'bit@2023') {
+                alert('Login successful!');
+            } else {
+                alert('Username or password incorrect. Please try again.');
+            }
+        });
+    </script>
+</body>
+</html>
