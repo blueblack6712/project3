@@ -1,0 +1,17 @@
+//code template for mix of css and jquery
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Title</title>
+        <script src="https://code.jquery.com/jquery-3.1.1.js"></script> <!-- Load jQuery -->
+        <style>
+            /* Your css codes */
+        </style>
+    </head>
+    <body>
+        <!-- Your HTML Codes -->
+    </body>
+    <script>
+        // Your jQuery or Javascript codes
+    </script>
+</html>
