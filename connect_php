@@ -1,0 +1,21 @@
+<?php
+$con=mysql_connect("localhost","root","");//连接本地数据库 root是默认的用户名 密码为空（前提是没用设置用户名 密码）
+$my_db=mysql_select_db("mynewsql",$con) or die("error");//连接数据库，第一个参数是数据库名
+mysql_query("set names 'utf8'");//设置编码格式，以防乱码
+$sql = "SELECT * FROM `newslist`";//查询
+$query=mysql_query($sql);//执行sql语句
+if ($query && mysql_num_rows($query)) {
+ 	while ($row = mysql_fetch_assoc($query))
+   {
+   	$data[]=$row;
+   }  
+ 
+ }else if(mysql_num_rows($query)==0){
+     $data='{content:"blank"}';
+     echo $data;
+     return;
+ }
+ 
+    $jsondata=json_encode($data,JSON_UNESCAPED_UNICODE);//以json格式输出
+   	echo $jsondata;//打印出结果
+?>
